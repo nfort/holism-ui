@@ -4,8 +4,8 @@ import { BorderRadius, COLORS } from "../Palette/export";
 import {DefaultTheme, ITheme} from "../Palette/variables";
 import Loader from "../Loader/Loader";
 
-export function FieldLoading(props: Partial<ISuggestStyle>) {
-  return <StyledField {...props}><div><Placeholder {...props}>Город</Placeholder></div><div><Loader color={COLORS.azure}/></div></StyledField>
+export function FieldLoading({label, ...props}: Partial<ISuggestStyle> & { label: string }) {
+  return <StyledField {...props}><div><Placeholder {...props}>{label}</Placeholder></div><div><Loader color={COLORS.azure}/></div></StyledField>
 }
 
 const dimensionStyle = {
@@ -45,7 +45,6 @@ export const StyledField = styled.div<ISuggestStyle>`
 
 export const Placeholder = styled.div<ISuggestStyle>`
   position: relative;
-  left: 16px;
   box-sizing: border-box;
   white-space: nowrap;
   max-width: calc(100% - 48px);

@@ -11,7 +11,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const smallSize = () => <FieldLoading dimension="small"/>
-export const mediumSize = () => <FieldLoading dimension="medium"/>
-export const largeSize = () => <FieldLoading dimension="large"/>
+export const smallSize = () => <FieldLoading label="Город" dimension="small"/>
+export const mediumSize = () => <FieldLoading label="Город" dimension="medium"/>
+export const largeSize = () => <FieldLoading label="Город" dimension="large"/>
 
