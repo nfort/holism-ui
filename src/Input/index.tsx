@@ -14,6 +14,7 @@ import { ISharedInputBase } from "../InputBase/interfaces";
 import TextAreaElement from "../InputBase/components/TextAreaElement";
 
 import { IProps, IShared } from "./interfaces";
+import { availableSetSelectionRange } from "./utils";
 
 const Input = (props: IProps) => {
   const {
@@ -100,7 +101,10 @@ const Input = (props: IProps) => {
 
   const setSelectionRange = (index: number) => {
     const { current } = inputTargetRef;
-    current?.setSelectionRange(index, index);
+    if (!current) return;
+    if (availableSetSelectionRange(current.type)) {
+      current.setSelectionRange(index, index);
+    }
   };
 
   const wrapperFixChromeCursorBug = (valueLength: number, callback: (value: number) => void): void => {
