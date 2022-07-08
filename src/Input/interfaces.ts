@@ -5,7 +5,7 @@ import { IInputBase } from "../InputBase/interfaces";
 export type TInputMode = "text" | "none" | "search" | "tel" | "url" | "email" | "numeric" | "decimal";
 
 export interface IProps extends IInputBase {
-  value?: string;
+  value?: string | Date;
   isMultiLine?: boolean;
   isAutoFill?: boolean;
   id?: string;

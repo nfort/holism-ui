@@ -14,7 +14,7 @@ import { ISharedInputBase } from "../InputBase/interfaces";
 import TextAreaElement from "../InputBase/components/TextAreaElement";
 
 import { IProps, IShared } from "./interfaces";
-import { availableSetSelectionRange } from "./utils";
+import { availableSetSelectionRange, formatDate } from "./utils";
 
 const Input = (props: IProps) => {
   const {
@@ -141,12 +141,22 @@ const Input = (props: IProps) => {
     onPasswordToggle: handlePasswordToggle,
   };
 
+  const getValue = () => {
+    if (value instanceof Date) {
+      if (type === "date") {
+        return formatDate(value);
+      }
+      return value.toString();
+    }
+    return value || "";
+  };
+
   const sharedProps: IShared = {
     id,
     maxLength,
     name,
     autoFocus: isAutoFocus,
-    value: value || "",
+    value: getValue(),
     inputMode,
     onChange: handleChange,
     onKeyPress: handleKeyPress,
