@@ -31,7 +31,9 @@ const Button = (props: IProps) => {
     secondary: COLORS.sapphire,
     tertiary: COLORS.azure,
     danger: COLORS.redMain,
-    green: COLORS.lime,
+    "danger-secondary": COLORS.redMain,
+    success: COLORS.lime,
+    "success-secondary": COLORS.lime,
     white: COLORS.azure,
     disabled: COLORS.greyDay,
   };

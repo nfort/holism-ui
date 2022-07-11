@@ -1,9 +1,9 @@
-import styled, { css, SimpleInterpolation } from 'styled-components';
-import { rgba } from 'polished';
+import styled, { css, SimpleInterpolation } from "styled-components";
+import { rgba } from "polished";
 
-import { DefaultTheme, ITheme } from '../Palette/variables';
+import { DefaultTheme, ITheme } from "../Palette/variables";
 
-import { IProps, TButtonColors } from './interfaces';
+import { IProps, TButtonColors } from "./interfaces";
 
 interface IButton extends Partial<IProps> {
   theme: ITheme;
@@ -12,7 +12,7 @@ interface IButton extends Partial<IProps> {
 const xsmall = (theme: ITheme, isWithIcon?: boolean) => css`
   font-size: ${theme.typography.fontSize3};
   line-height: ${theme.typography.lineHeight3};
-  padding: ${isWithIcon ? '4px' : '7px 20px'};
+  padding: ${isWithIcon ? "4px" : "7px 20px"};
 
   > *:not(:first-child) {
     margin-left: 8px;
@@ -22,7 +22,7 @@ const xsmall = (theme: ITheme, isWithIcon?: boolean) => css`
 const small = (theme: ITheme, isWithIcon?: boolean) => css`
   font-size: ${theme.typography.fontSize2};
   line-height: ${theme.typography.lineHeight2};
-  padding: ${isWithIcon ? '8px' : '9px 26px'};
+  padding: ${isWithIcon ? "8px" : "9px 26px"};
 
   > *:not(:first-child) {
     margin-left: 8px;
@@ -32,7 +32,7 @@ const small = (theme: ITheme, isWithIcon?: boolean) => css`
 const medium = (theme: ITheme, isWithIcon?: boolean) => css`
   font-size: ${theme.typography.fontSize1};
   line-height: ${theme.typography.lineHeight2};
-  padding: ${isWithIcon ? '12px' : '13px 32px'};
+  padding: ${isWithIcon ? "12px" : "13px 32px"};
 
   > *:not(:first-child) {
     margin-left: 12px;
@@ -42,7 +42,7 @@ const medium = (theme: ITheme, isWithIcon?: boolean) => css`
 const large = (theme: ITheme, isWithIcon?: boolean) => css`
   font-size: ${theme.typography.fontSize1};
   line-height: ${theme.typography.lineHeight2};
-  padding: ${isWithIcon ? '15px' : '17px 32px'};
+  padding: ${isWithIcon ? "15px" : "17px 32px"};
 
   > *:not(:first-child) {
     margin-left: 12px;
@@ -70,8 +70,7 @@ const primary: TColorButtonCSS = (theme, isWithIcon, isLoading, isDisabled) =>
     ? disabledStyle(theme, isWithIcon)
     : css`
         background-color: ${isLoading ? theme.colors.ultramarine : theme.colors.sapphire};
-        border: solid ${theme.borderWidth}
-          ${isLoading ? theme.colors.ultramarine : theme.colors.sapphire};
+        border: solid ${theme.borderWidth} ${isLoading ? theme.colors.ultramarine : theme.colors.sapphire};
         ${isWithIcon && isWithIconStyle(theme.colors.white)};
         color: ${theme.colors.white};
 
@@ -90,7 +89,7 @@ const primary: TColorButtonCSS = (theme, isWithIcon, isLoading, isDisabled) =>
         }
       `;
 
-const secondary: TColorButtonCSS = (theme, isWithIcon, isLoading, isDisabled) =>
+const secondary: TColorButtonCSS = (theme, isWithIcon, _isLoading, isDisabled) =>
   isDisabled
     ? disabledStyle(theme, isWithIcon)
     : css`
@@ -116,7 +115,7 @@ const secondary: TColorButtonCSS = (theme, isWithIcon, isLoading, isDisabled) =>
         }
       `;
 
-const tertiary: TColorButtonCSS = (theme, isWithIcon, isLoading, isDisabled) => css`
+const tertiary: TColorButtonCSS = (theme, isWithIcon, _isLoading, isDisabled) => css`
   background-color: ${theme.colors.white};
   border: solid ${theme.borderWidth} ${isDisabled ? theme.colors.rainySky : theme.colors.blueberry};
   ${isWithIcon && isWithIconStyle(isDisabled ? theme.colors.asphalt : theme.colors.sapphire)};
@@ -139,10 +138,10 @@ const tertiary: TColorButtonCSS = (theme, isWithIcon, isLoading, isDisabled) => 
   }
 
   ${isDisabled &&
-    css`
-      cursor: default;
-      pointer-events: none;
-    `}
+  css`
+    cursor: default;
+    pointer-events: none;
+  `}
 `;
 
 const danger: TColorButtonCSS = (theme, isWithIcon, isLoading, isDisabled) =>
@@ -150,8 +149,7 @@ const danger: TColorButtonCSS = (theme, isWithIcon, isLoading, isDisabled) =>
     ? disabledStyle(theme, isWithIcon)
     : css`
         background-color: ${isLoading ? theme.colors.redBrick : theme.colors.redMain};
-        border: solid ${theme.borderWidth}
-          ${isLoading ? theme.colors.redBrick : theme.colors.redMain};
+        border: solid ${theme.borderWidth} ${isLoading ? theme.colors.redBrick : theme.colors.redMain};
         ${isWithIcon && isWithIconStyle(theme.colors.white)};
         color: ${theme.colors.white};
 
@@ -230,7 +228,7 @@ const successSecondary: TColorButtonCSS = (theme, isWithIcon, isLoading, isDisab
         color: ${theme.colors.spring};
 
         &::before {
-          content: '';
+          content: "";
           position: absolute;
           top: -4px;
           left: -4px;
@@ -269,7 +267,7 @@ const successSecondary: TColorButtonCSS = (theme, isWithIcon, isLoading, isDisab
         }
       `;
 
-const white: TColorButtonCSS = (theme, isWithIcon, isLoading, isDisabled) =>
+const white: TColorButtonCSS = (theme, isWithIcon, _isLoading, isDisabled) =>
   isDisabled
     ? disabledStyle(theme, isWithIcon)
     : css`
@@ -314,9 +312,9 @@ const colorButton: Record<TButtonColors, TColorButtonCSS> = {
   secondary,
   tertiary,
   danger,
-  ['danger-secondary']: dangerSecondary,
+  ["danger-secondary"]: dangerSecondary,
   success,
-  ['success-secondary']: successSecondary,
+  ["success-secondary"]: successSecondary,
   white,
 };
 
@@ -324,7 +322,7 @@ export const ButtonContent = styled.span<IButton>`
   cursor: pointer;
   height: 100%;
   width: 100%;
-  display: ${({ isFullWidth }) => (isFullWidth ? 'flex' : 'inline-flex')};
+  display: ${({ isFullWidth }) => (isFullWidth ? "flex" : "inline-flex")};
   justify-content: center;
   align-items: center;
 
@@ -332,8 +330,7 @@ export const ButtonContent = styled.span<IButton>`
     outline: none;
   }
 
-  ${({ dimension, isWithIcon, theme }: IButton) =>
-    dimension && dimensionButtonContent[dimension](theme, isWithIcon)};
+  ${({ dimension, isWithIcon, theme }: IButton) => dimension && dimensionButtonContent[dimension](theme, isWithIcon)};
 `;
 
 ButtonContent.defaultProps = {
@@ -358,9 +355,9 @@ export const ButtonComponent = styled.button<IButton>`
   position: relative;
   transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s, color 0.3s;
   ${({ isFullWidth, width, theme }) => css`
-    width: ${isFullWidth ? '100%' : width || 'auto'};
+    width: ${isFullWidth ? "100%" : width || "auto"};
     font-family: ${theme.typography.fontFamily};
-    display: ${isFullWidth ? 'flex' : 'inline-flex'};
+    display: ${isFullWidth ? "flex" : "inline-flex"};
     border-radius: ${theme.shape.borderRadiusDefault};
   `};
   text-decoration: none;
@@ -368,8 +365,8 @@ export const ButtonComponent = styled.button<IButton>`
   justify-content: center;
   align-items: center;
   ${({ isLoading }: IButton) => css`
-    cursor: ${isLoading ? 'default' : 'pointer'};
-    pointer-events: ${isLoading ? 'none' : 'auto'};
+    cursor: ${isLoading ? "default" : "pointer"};
+    pointer-events: ${isLoading ? "none" : "auto"};
   `};
 
   -webkit-tap-highlight-color: transparent;
@@ -384,7 +381,7 @@ export const ButtonComponent = styled.button<IButton>`
   &:focus {
     outline: none;
   }
-  
+
   ${LoaderStyle} ~ ${ButtonContent} {
     opacity: 0;
   }
