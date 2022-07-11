@@ -1,9 +1,9 @@
-import React, { useRef, useState, useEffect, ReactNode, useContext } from 'react';
+import React, { useRef, useState, useEffect, ReactNode, useContext } from "react";
 
-import { ModalContext } from './index';
-import { FooterStyle, StickyCheckerStyle } from './style';
-import { IFooterProps, EAnimationType, IModalContext } from './utils/interfaces';
-import useIntersection from './utils/useIntersection';
+import { ModalContext } from "./ModalWindow";
+import { FooterStyle, StickyCheckerStyle } from "./style";
+import { IFooterProps, EAnimationType, IModalContext } from "./utils/interfaces";
+import useIntersection from "./utils/useIntersection";
 
 const Footer = (props: IFooterProps) => {
   const {
@@ -43,9 +43,9 @@ const Footer = (props: IFooterProps) => {
 
   useEffect(() => {
     const ModalOverlay = modalOverlayRef?.current;
-    isOpen && isMobile && !isSticky && ModalOverlay?.addEventListener('scroll', handleScroll);
+    isOpen && isMobile && !isSticky && ModalOverlay?.addEventListener("scroll", handleScroll);
     return () => {
-      ModalOverlay?.removeEventListener('scroll', handleScroll);
+      ModalOverlay?.removeEventListener("scroll", handleScroll);
     };
   }, [isOpen, isMobile]);
 
@@ -83,7 +83,8 @@ const Footer = (props: IFooterProps) => {
         padding={padding}
         animationType={animationType}
         onAnimationEnd={handleAnimationEnd}
-        className={className}>
+        className={className}
+      >
         {animatedChildren}
       </FooterStyle>
       {isSticky && <StickyCheckerStyle ref={refSticky} />}

@@ -1,10 +1,9 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from "react";
 
-import { ITheme } from '../../Palette/variables';
+import { ITheme } from "../../Palette/variables";
 
 export interface IModalWindowProps {
-  modalRootName: string;
-  maxWidthStyle?: string;
+  width?: string;
   isOpen: boolean;
   isMobile: boolean;
   animationDuration?: number;
@@ -31,27 +30,12 @@ export interface IHeaderProps {
   isSticky?: boolean;
   title?: string;
   onClickIconInHeader: () => void;
-  icon?: ReactNode;
   padding?: string;
   className?: string;
 }
 
-type TJustifyContent =
-  | 'flex-start'
-  | 'flex-end'
-  | 'center'
-  | 'space-between'
-  | 'space-around'
-  | 'space-evenly';
-type TAlignItems =
-  | 'flex-start'
-  | 'flex-end'
-  | 'center'
-  | 'baseline'
-  | 'stretch'
-  | 'unset'
-  | 'initial'
-  | 'inherit';
+type TJustifyContent = "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly";
+type TAlignItems = "flex-start" | "flex-end" | "center" | "baseline" | "stretch" | "unset" | "initial" | "inherit";
 
 export interface IContentProps {
   isLoading?: boolean;
@@ -85,7 +69,7 @@ export interface IBaseProps {
   theme: ITheme;
   isMobile?: boolean;
   isLoading?: boolean;
-  maxWidthStyle?: string;
+  width?: string;
   isUseHeightIE11?: boolean;
 }
 

@@ -1,11 +1,12 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from "react";
 
-import useIntersection from './utils/useIntersection';
-import { HeaderStyle, IconContainer, StickyCheckerStyle, TitleStyle } from './style';
-import { IHeaderProps, EAnimationType } from './utils/interfaces';
+import useIntersection from "./utils/useIntersection";
+import { HeaderStyle, IconContainer, StickyCheckerStyle, TitleStyle } from "./style";
+import { IHeaderProps, EAnimationType } from "./utils/interfaces";
+import { CloseIcon } from "@holism/icons";
 
 const Header = (props: IHeaderProps) => {
-  const { isSticky = false, icon, title, onClickIconInHeader, padding, className } = props;
+  const { isSticky = false, title, onClickIconInHeader, padding, className } = props;
   const [isStickyNow, setIsStickyNow] = useState<boolean>(isSticky);
 
   const [animatedTitle, setAnimatedTitle] = useState<string | undefined>(title);
@@ -42,7 +43,9 @@ const Header = (props: IHeaderProps) => {
     <>
       {isSticky && <StickyCheckerStyle ref={refChecker} />}
       <HeaderStyle isSticky={isStickyNow} padding={padding} ref={refHeader} className={className}>
-        <IconContainer onClick={onClickIconInHeader}>{icon}</IconContainer>
+        <IconContainer onClick={onClickIconInHeader}>
+          <CloseIcon size={20} />
+        </IconContainer>
         {animatedTitle && (
           <TitleStyle animationType={animationType} onAnimationEnd={handleAnimationEnd}>
             {animatedTitle}
