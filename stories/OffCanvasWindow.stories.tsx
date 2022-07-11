@@ -16,11 +16,13 @@ const meta: Meta = {
 
 export default meta;
 
-export const modalWindowSticky = () => {
+export const offConvasWindowSticky = () => {
   const [open, toggle] = useState(false);
   return (
     <div>
-      <button onClick={() => toggle(true)}>Открыть модальное окно</button>
+      <Button dimension="small" onClick={() => toggle(true)}>
+        Открыть модальное окно
+      </Button>
       <OffCanvasWindow isOpen={open} isMobile={false} onClickOutside={() => toggle(false)}>
         <Header onClickIconInHeader={() => toggle(false)} title="Перенос доставки" isSticky={true} />
         <Content>

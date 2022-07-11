@@ -20,7 +20,9 @@ export const modalWindowSticky = () => {
   const [open, toggle] = useState(false);
   return (
     <div>
-      <button onClick={() => toggle(true)}>Открыть модальное окно</button>
+      <Button dimension="small" onClick={() => toggle(true)}>
+        Открыть модальное окно
+      </Button>
       <ModalWindow isOpen={open} isMobile={false} onClickOutside={() => toggle(false)} width="75%">
         <Header onClickIconInHeader={() => toggle(false)} title="Перенос доставки" isSticky={true} />
         <Content>
