@@ -23,7 +23,6 @@
   },
   "peerDependencies": {
     "react": ">=17",
-    "styled-components": "5.x.x",
     "@holism/icons": "6.x.x"
   },
   "husky": {
@@ -55,15 +54,19 @@
     "@storybook/addon-links": "^6.4.19",
     "@storybook/addons": "^6.4.19",
     "@storybook/react": "^6.4.19",
+    "@types/react-window": "^1.8.1",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
+    "@types/react-select": "^3.0.10",
     "@types/styled-components": "^5.1.22",
+    "@types/react-textarea-autosize": "^4.3.6",
     "babel-loader": "^8.2.3",
     "chromatic": "^6.5.1",
     "husky": "^7.0.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
+    "react-window": "^1.8.5",
     "size-limit": "^7.0.8",
     "tsdx": "^0.14.1",
     "tslib": "^2.3.1",
@@ -72,7 +75,10 @@
   "dependencies": {
     "@tippyjs/react": "^4.1.0",
     "resize-observer-polyfill": "^1.5.1",
+    "react-textarea-autosize": "^8.3.3",
     "styled-components": "^5.3.3",
+    "polished": "^4.1.4",
+    "react-select": "^3.1.0",
     "@holism/icons": "^6.11.5"
   }
 }
