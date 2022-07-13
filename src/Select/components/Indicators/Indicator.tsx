@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { IIndicatorContainer } from './interfaces';
+import { IIndicatorContainer } from "./interfaces";
 
 const IndicatorContainer = ({
   getStyles,
@@ -13,9 +13,10 @@ const IndicatorContainer = ({
     {...restInnerProps}
     ref={ref}
     style={{
-      ...getStyles('clearIndicator', props),
+      ...getStyles("clearIndicator", props),
       padding: 0,
-    }}>
+    }}
+  >
     {children}
   </div>
 );

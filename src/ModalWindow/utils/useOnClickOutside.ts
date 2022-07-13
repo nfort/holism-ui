@@ -1,10 +1,6 @@
-import { RefObject, useEffect } from 'react';
+import { RefObject, useEffect } from "react";
 
-export function useOnClickOutside(
-  ref: RefObject<HTMLDivElement>,
-  handler?: () => void,
-  isOpen?: boolean
-) {
+export function useOnClickOutside(ref: RefObject<HTMLDivElement>, handler?: () => void, isOpen?: boolean) {
   useEffect(() => {
     const listener = (event: MouseEvent | TouchEvent) => {
       const mouseEvent: MouseEvent = event as MouseEvent;
@@ -22,14 +18,14 @@ export function useOnClickOutside(
 
     const isUseEventListener: boolean = isOpen !== undefined ? isOpen : true;
     if (isUseEventListener) {
-      document.addEventListener('mousedown', listener);
-      document.addEventListener('touchstart', listener);
+      document.addEventListener("mousedown", listener);
+      document.addEventListener("touchstart", listener);
     }
 
     return () => {
       if (isUseEventListener) {
-        document.removeEventListener('mousedown', listener);
-        document.removeEventListener('touchstart', listener);
+        document.removeEventListener("mousedown", listener);
+        document.removeEventListener("touchstart", listener);
       }
     };
   }, [ref, handler, isOpen]);

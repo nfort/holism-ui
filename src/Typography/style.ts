@@ -1,8 +1,8 @@
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
+import styled, { css, FlattenSimpleInterpolation } from "styled-components";
 
-import { DefaultTheme, ITheme } from '../Palette/variables';
+import { DefaultTheme, ITheme } from "../Palette/variables";
 
-import { IParagraph } from './Typography';
+import { IParagraph } from "./Typography";
 
 interface IThemeStyle extends Partial<IParagraph> {
   theme: ITheme;
@@ -13,11 +13,11 @@ const getColor = (theme: ITheme, color?: string) => css<IThemeStyle>`
 `;
 
 const fontStyle = (font: string): FlattenSimpleInterpolation => {
-  const [fontSize, lineHeight, fontWeight] = font.split('/');
+  const [fontSize, lineHeight, fontWeight] = font.split("/");
   return css`
     font-size: ${fontSize}px;
     line-height: ${lineHeight}px;
-    ${fontWeight === 'bold' ? 'font-weight: bold;' : 'font-weight: normal;'};
+    ${fontWeight === "bold" ? "font-weight: bold;" : "font-weight: normal;"};
   `;
 };
 
@@ -117,10 +117,8 @@ export const P = styled.p<IThemeStyle>`
     ${getColor(theme, color)}
   `}
   ${({ size, lineHeight, fontWeight, font, theme }: IThemeStyle) => {
-    const sizeNew = size ? size : parseInt(theme.typography.large.fontSize1 || '16', 10);
-    const lineHeightNew = lineHeight
-      ? lineHeight
-      : parseInt(theme.typography.large.lineHeight2 || '20', 10);
+    const sizeNew = size ? size : parseInt(theme.typography.large.fontSize1 || "16", 10);
+    const lineHeightNew = lineHeight ? lineHeight : parseInt(theme.typography.large.lineHeight2 || "20", 10);
 
     return font ? fontStyle(font) : fontStyle(`${sizeNew}/${lineHeightNew}/${fontWeight}`);
   }}

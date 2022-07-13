@@ -1,8 +1,8 @@
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
-import { ArrowLeftIcon, ArrowRightIcon } from '@holism/icons';
+import styled, { css, FlattenSimpleInterpolation } from "styled-components";
+import { ArrowLeftIcon, ArrowRightIcon } from "@holism/icons";
 
-import { EDirection, IStyles } from './interfaces';
-import {DefaultTheme} from "../../../Palette/export";
+import { EDirection, IStyles } from "./interfaces";
+import { DefaultTheme } from "../../../Palette/export";
 
 const setColorJohnSnow = ({ theme }: IStyles): string => theme.colors.johnSnow;
 const setColorSapphire = ({ theme }: IStyles): string => theme.colors.sapphire;
@@ -113,7 +113,7 @@ export const RightButton = styled(ArrowRightIcon)<IStyles>`
 
 Container.defaultProps = {
   theme: DefaultTheme,
-  type: "button"
+  type: "button",
 };
 Inner.defaultProps = {
   theme: DefaultTheme,

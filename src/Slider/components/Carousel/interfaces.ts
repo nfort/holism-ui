@@ -1,6 +1,6 @@
-import { ReactNode, Ref } from 'react';
+import { ReactNode, Ref } from "react";
 
-import { ISlide } from '../../interfaces';
+import { ISlide } from "../../interfaces";
 
 export interface IProps {
   slides: ISlide[] | ReactNode;
@@ -21,4 +21,4 @@ export interface IStyles {
   slideShift?: number;
 }
 
-export type TSlideShift = 'positive' | 'negative';
+export type TSlideShift = "positive" | "negative";

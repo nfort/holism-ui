@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
-import { InnerRef } from 'react-select/src/types';
+import { ReactNode } from "react";
+import { InnerRef } from "react-select/src/types";
 
 export interface IMenu {
   inputRef?: InnerRef;

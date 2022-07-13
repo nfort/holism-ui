@@ -1,11 +1,11 @@
-import { css, CSSObject, Interpolation } from 'styled-components';
+import { css, CSSObject, Interpolation } from "styled-components";
 
-import { IMedia, MEDIA } from '../Palette/variables';
+import { IMedia, MEDIA } from "../Palette/variables";
 
-export const MediaQuery = (screen: keyof IMedia) => (
-  strings: TemplateStringsArray | CSSObject,
-  ...expressions: Array<Interpolation<any>>
-) => `
+export const MediaQuery =
+  (screen: keyof IMedia) =>
+  (strings: TemplateStringsArray | CSSObject, ...expressions: Array<Interpolation<any>>) =>
+    `
   @media ${MEDIA[screen]} {
     ${css(strings, ...expressions)}
   }

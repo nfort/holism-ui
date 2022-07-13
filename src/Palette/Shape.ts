@@ -7,9 +7,9 @@ export interface IShape {
 }
 
 export const Shape = {
-  borderRadiusDefault: '8px',
-  borderRadiusXSmall: '16px',
-  borderRadiusSmall: '20px',
-  borderRadiusMedium: '24px',
-  borderRadiusLarge: '28px',
+  borderRadiusDefault: "8px",
+  borderRadiusXSmall: "16px",
+  borderRadiusSmall: "20px",
+  borderRadiusMedium: "24px",
+  borderRadiusLarge: "28px",
 };

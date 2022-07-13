@@ -1,10 +1,10 @@
-import styled, { keyframes, css, FlattenSimpleInterpolation } from 'styled-components';
-import { DefaultTheme } from '../../../../../Palette/export';
+import styled, { keyframes, css, FlattenSimpleInterpolation } from "styled-components";
+import { DefaultTheme } from "../../../../../Palette/export";
 
-import { IStyles } from './interfaces';
+import { IStyles } from "./interfaces";
 
-const setDotWidth = ({ isActive }: IStyles): string => (isActive ? '32px' : '8px');
-const setCursor = ({ isActive }: IStyles): string => (isActive ? 'default' : 'pointer');
+const setDotWidth = ({ isActive }: IStyles): string => (isActive ? "32px" : "8px");
+const setCursor = ({ isActive }: IStyles): string => (isActive ? "default" : "pointer");
 const setDotOpacity = ({ isActive }: IStyles): number => (isActive ? 0.8 : 0.3);
 const setColorAsphalt = ({ theme }: IStyles): string => theme.colors.asphalt;
 const setAnimation = ({ animationDuration }: IStyles): FlattenSimpleInterpolation => css`

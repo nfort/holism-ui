@@ -1,8 +1,8 @@
-import React, { ReactElement, useState, useEffect } from 'react';
+import React, { ReactElement, useState, useEffect } from "react";
 
-import PaginationDot from './components/PaginationDot';
-import { IProps, IPaginationDot } from './interfaces';
-import { Container } from './styles';
+import PaginationDot from "./components/PaginationDot";
+import { IProps, IPaginationDot } from "./interfaces";
+import { Container } from "./styles";
 
 const PaginationDots = ({
   isAnimated,
@@ -16,7 +16,7 @@ const PaginationDots = ({
   const [pagination, setPagination] = useState<IPaginationDot[]>([]);
 
   const calculatePagination = (): IPaginationDot[] =>
-    new Array(controlItemsLength || 0).fill('').map(
+    new Array(controlItemsLength || 0).fill("").map(
       (_item: string, index: number): IPaginationDot => ({
         dotIndex: index,
         isActive: index === currentPosition,

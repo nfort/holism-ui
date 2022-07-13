@@ -1,4 +1,4 @@
-export type TDimension = 'small' | 'medium' | 'large';
+export type TDimension = "small" | "medium" | "large";
 
 export interface IProps {
   dimension: TDimension;

@@ -1,8 +1,8 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css, keyframes } from "styled-components";
 
-import { DefaultTheme, ITheme } from '../Palette/variables';
+import { DefaultTheme, ITheme } from "../Palette/variables";
 
-import { IProps, TDimension } from './interfaces';
+import { IProps, TDimension } from "./interfaces";
 
 interface ILoader extends IProps {
   theme: ITheme;
@@ -10,13 +10,13 @@ interface ILoader extends IProps {
 
 const loaderDimension = (dimension: TDimension | undefined): string => {
   switch (dimension) {
-    case 'small':
-      return '16px';
-    case 'large':
-      return '24px';
-    case 'medium':
+    case "small":
+      return "16px";
+    case "large":
+      return "24px";
+    case "medium":
     default:
-      return '20px';
+      return "20px";
   }
 };
 
@@ -36,7 +36,7 @@ export const LoaderStyle = styled.div<ILoader>`
     width: ${loaderDimension(dimension)};
     height: ${loaderDimension(dimension)};
   `}
-  background: ${({ background }) => (background ? background : 'transparent')};
+  background: ${({ background }) => (background ? background : "transparent")};
   ${({ center }) =>
     center &&
     css`
@@ -57,9 +57,7 @@ export const LoaderStyle = styled.div<ILoader>`
     position: absolute;
     border-radius: 50%;
     animation: ${animation} 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: ${({ color, theme }) =>
-      color ? color : theme.colors.white} transparent transparent
-      transparent;
+    border-color: ${({ color, theme }) => (color ? color : theme.colors.white)} transparent transparent transparent;
   }
 
   & div:nth-child(1) {

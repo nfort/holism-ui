@@ -1,4 +1,4 @@
-import { ITheme } from '../../../Palette/variables';
+import { ITheme } from "../../../Palette/variables";
 
 export interface IProps {
   direction: EDirection;

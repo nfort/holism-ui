@@ -1,9 +1,9 @@
-import React, { useState, ReactNode, useEffect } from 'react';
-import Loader from '../Loader/Loader';
-import { COLORS } from '../Palette/Colors';
+import React, { useState, ReactNode, useEffect } from "react";
+import Loader from "../Loader/Loader";
+import { COLORS } from "../Palette/Colors";
 
-import { IContentProps, EAnimationType } from './utils/interfaces';
-import { ContentStyle } from './style';
+import { IContentProps, EAnimationType } from "./utils/interfaces";
+import { ContentStyle } from "./style";
 
 const Content = (props: IContentProps) => {
   const { isLoading, children, padding, alignItems, justifyContent, className } = props;
@@ -34,12 +34,9 @@ const Content = (props: IContentProps) => {
       onAnimationEnd={handleAnimationEnd}
       alignItems={alignItems}
       justifyContent={justifyContent}
-      className={className}>
-      {isLoading ? (
-        <Loader color={COLORS.sapphire} center={true} dimension="large" />
-      ) : (
-        animatedChildren
-      )}
+      className={className}
+    >
+      {isLoading ? <Loader color={COLORS.sapphire} center={true} dimension="large" /> : animatedChildren}
     </ContentStyle>
   );
 };

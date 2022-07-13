@@ -1,11 +1,20 @@
 import React from "react";
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 import { BorderRadius, COLORS } from "../Palette/export";
-import {DefaultTheme, ITheme} from "../Palette/variables";
+import { DefaultTheme, ITheme } from "../Palette/variables";
 import Loader from "../Loader/Loader";
 
-export function FieldLoading({label, ...props}: Partial<ISuggestStyle> & { label: string }) {
-  return <StyledField {...props}><div><Placeholder {...props}>{label}</Placeholder></div><div><Loader color={COLORS.azure}/></div></StyledField>
+export function FieldLoading({ label, ...props }: Partial<ISuggestStyle> & { label: string }) {
+  return (
+    <StyledField {...props}>
+      <div>
+        <Placeholder {...props}>{label}</Placeholder>
+      </div>
+      <div>
+        <Loader color={COLORS.azure} />
+      </div>
+    </StyledField>
+  );
 }
 
 const dimensionStyle = {
@@ -29,11 +38,9 @@ export const StyledField = styled.div<ISuggestStyle>`
   width: 100%;
   box-sizing: border-box;
   font-weight: normal;
-  transition: border 0.3s ease-out, background 0.3s ease-out, opacity 0.3s ease-out,
-    color 0.3s ease-out;
-  
+  transition: border 0.3s ease-out, background 0.3s ease-out, opacity 0.3s ease-out, color 0.3s ease-out;
 
-  ${({ theme, dimension = 'large' }: ISuggestStyle) => css`
+  ${({ theme, dimension = "large" }: ISuggestStyle) => css`
     color: ${theme.colors.plumbum};
     border-color: ${theme.colors.greyDay};
     border: ${theme.borderWidth} solid ${theme.colors.greyDay};
@@ -55,20 +62,20 @@ export const Placeholder = styled.div<ISuggestStyle>`
 
 Placeholder.defaultProps = {
   theme: DefaultTheme,
-  dimension: 'large',
+  dimension: "large",
   isFocused: false,
   hasValue: false,
 };
 
 StyledField.defaultProps = {
   theme: DefaultTheme,
-  dimension: 'large',
+  dimension: "large",
   isDisabled: false,
   isError: false,
   isFocused: false,
 };
 
-export type TDimension = 'small' | 'medium' | 'large';
+export type TDimension = "small" | "medium" | "large";
 
 export interface ISuggestStyle {
   isSuggestionsListOpened?: boolean;

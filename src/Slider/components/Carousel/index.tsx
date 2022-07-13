@@ -1,6 +1,6 @@
-import React, { isValidElement, ReactElement, ReactNode, TouchEvent, useState } from 'react';
+import React, { isValidElement, ReactElement, ReactNode, TouchEvent, useState } from "react";
 
-import { ISlide } from '../../interfaces';
+import { ISlide } from "../../interfaces";
 
 import {
   SliderContent,
@@ -9,8 +9,8 @@ import {
   ImageContainer,
   Image,
   ReactElementContainer,
-} from './styles';
-import { IProps } from './interfaces';
+} from "./styles";
+import { IProps } from "./interfaces";
 
 const Carousel = ({
   slides,
@@ -36,8 +36,7 @@ const Carousel = ({
   };
   // Если наполнение из React элемента
   const isReactElement = isValidElement(slides);
-  const isLastSlide: boolean =
-    isReactElement && currentPosition === Math.ceil(contentWidth / sliderWidth) - 1;
+  const isLastSlide: boolean = isReactElement && currentPosition === Math.ceil(contentWidth / sliderWidth) - 1;
   // Отступ, если последний слайд
   const slideShift: number = isLastSlide
     ? contentWidth - sliderWidth
@@ -48,50 +47,43 @@ const Carousel = ({
       {isValidElement(slides) && (
         <SliderContentContainer isReactElement={isReactElement}>
           <SliderContent
-            onTouchStart={(event: TouchEvent<HTMLDivElement>) =>
-              setFirstTouch(event.touches[0].clientX)
-            }
+            onTouchStart={(event: TouchEvent<HTMLDivElement>) => setFirstTouch(event.touches[0].clientX)}
             onTouchEnd={handleTouchEnd}
             ref={contentRef}
-            slideShift={slideShift}>
+            slideShift={slideShift}
+          >
             {slides}
           </SliderContent>
         </SliderContentContainer>
       )}
 
-      {Array.isArray(slides) && typeof slides[0] === 'function' && (
+      {Array.isArray(slides) && typeof slides[0] === "function" && (
         <SliderContentContainer>
           <SliderContent
             ref={contentRef}
             slideShift={slideShift}
-            onTouchStart={(event: TouchEvent<HTMLDivElement>) =>
-              setFirstTouch(event.touches[0].clientX)
-            }
-            onTouchEnd={handleTouchEnd}>
-            {((slides as unknown) as Array<() => ReactNode>).map(
-              (slide: () => ReactNode, index: number) => (
-                <ReactElementContainer
-                  key={slide.toString() + index}
-                  isActive={index === currentPosition}>
-                  {slide()}
-                </ReactElementContainer>
-              )
-            )}
+            onTouchStart={(event: TouchEvent<HTMLDivElement>) => setFirstTouch(event.touches[0].clientX)}
+            onTouchEnd={handleTouchEnd}
+          >
+            {(slides as unknown as Array<() => ReactNode>).map((slide: () => ReactNode, index: number) => (
+              <ReactElementContainer key={slide.toString() + index} isActive={index === currentPosition}>
+                {slide()}
+              </ReactElementContainer>
+            ))}
           </SliderContent>
         </SliderContentContainer>
       )}
 
-      {Array.isArray(slides) && typeof slides[0] !== 'function' && (
+      {Array.isArray(slides) && typeof slides[0] !== "function" && (
         <ImageWrapper>
           {(slides as ISlide[]).map(({ id, url }: ISlide) => (
             <ImageContainer
               key={id}
               ref={contentRef}
               slideShift={slideShift}
-              onTouchStart={(event: TouchEvent<HTMLDivElement>) =>
-                setFirstTouch(event.touches[0].clientX)
-              }
-              onTouchEnd={handleTouchEnd}>
+              onTouchStart={(event: TouchEvent<HTMLDivElement>) => setFirstTouch(event.touches[0].clientX)}
+              onTouchEnd={handleTouchEnd}
+            >
               <Image src={url} />
             </ImageContainer>
           ))}

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 type FunctionUseModalType = () => [boolean, (isShow: boolean) => void];
 

@@ -1,14 +1,9 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement } from "react";
 
-import { EDirection, IProps } from './interfaces';
-import { Container, LeftButton, RightButton, Wrapper, Inner } from './styles';
+import { EDirection, IProps } from "./interfaces";
+import { Container, LeftButton, RightButton, Wrapper, Inner } from "./styles";
 
-const ScrollButton = ({
-  direction,
-  onPress,
-  isOnAllScreen,
-  isVisible,
-}: IProps): ReactElement | null =>
+const ScrollButton = ({ direction, onPress, isOnAllScreen, isVisible }: IProps): ReactElement | null =>
   isVisible ? (
     <Wrapper isOnAllScreen={isOnAllScreen} direction={direction} onClick={() => onPress(direction)}>
       <Container>

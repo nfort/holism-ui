@@ -1,6 +1,6 @@
-import styled, { FlattenSimpleInterpolation, css } from 'styled-components';
+import styled, { FlattenSimpleInterpolation, css } from "styled-components";
 
-import { IStyles } from './interfaces';
+import { IStyles } from "./interfaces";
 
 const stylesForAllScreen = ({ isOnAllScreen }: IStyles): FlattenSimpleInterpolation | undefined =>
   isOnAllScreen

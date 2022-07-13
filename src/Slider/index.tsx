@@ -1,12 +1,12 @@
-import React, { useRef, useEffect, useState, KeyboardEvent } from 'react';
-import ResizeObserver from 'resize-observer-polyfill';
+import React, { useRef, useEffect, useState, KeyboardEvent } from "react";
+import ResizeObserver from "resize-observer-polyfill";
 
-import PaginationDots from './components/PaginationDots';
-import ScrollButton from './components/ScrollButton';
-import { EDirection } from './components/ScrollButton/interfaces';
-import Carousel from './components/Carousel';
-import { IProps, Timeout } from './interfaces';
-import { SlidesWrapper, Wrapper } from './styles';
+import PaginationDots from "./components/PaginationDots";
+import ScrollButton from "./components/ScrollButton";
+import { EDirection } from "./components/ScrollButton/interfaces";
+import Carousel from "./components/Carousel";
+import { IProps, Timeout } from "./interfaces";
+import { SlidesWrapper, Wrapper } from "./styles";
 
 const Slider = ({
   isOnAllScreen = false,
@@ -41,7 +41,7 @@ const Slider = ({
   // Save interval timer for use in another methods of component;
   const setTimer = (): void => {
     timerRef.current = setInterval(() => {
-      setSecondsForChangeSlide(seconds => seconds - 1);
+      setSecondsForChangeSlide((seconds) => seconds - 1);
     }, 1000);
   };
 
@@ -52,8 +52,7 @@ const Slider = ({
     if (!isTouch && isLoop) {
       newPosition = currentPosition < controlItemsLength - 1 ? currentPosition + 1 : 0;
     } else {
-      newPosition =
-        currentPosition < controlItemsLength - 1 ? currentPosition + 1 : currentPosition;
+      newPosition = currentPosition < controlItemsLength - 1 ? currentPosition + 1 : currentPosition;
     }
 
     onChange?.(newPosition);
@@ -96,8 +95,7 @@ const Slider = ({
   // Get slider content width on create window and resize;
   useEffect(() => {
     const ro = new ResizeObserver(() => {
-      sliderRef.current &&
-        setSliderWidth(parseFloat(sliderRef.current.getBoundingClientRect().width.toFixed(2)));
+      sliderRef.current && setSliderWidth(parseFloat(sliderRef.current.getBoundingClientRect().width.toFixed(2)));
 
       contentRef.current && setContentWidth(contentRef.current.scrollWidth);
     });
@@ -155,11 +153,7 @@ const Slider = ({
         overlap={overlap}
       />
 
-      <SlidesWrapper
-        ref={sliderRef}
-        tabIndex={0}
-        onKeyDown={handleKeyDown}
-        isOnAllScreen={isOnAllScreen}>
+      <SlidesWrapper ref={sliderRef} tabIndex={0} onKeyDown={handleKeyDown} isOnAllScreen={isOnAllScreen}>
         <Carousel
           isVisible={!isOnAllScreen}
           onNextSlide={changeToNextSlide}

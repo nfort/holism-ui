@@ -1,10 +1,8 @@
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
+import styled, { css, FlattenSimpleInterpolation } from "styled-components";
 
-import { IStyles } from './interfaces';
+import { IStyles } from "./interfaces";
 
-const setHeightForAllScreen = ({
-  isOnAllScreen,
-}: IStyles): FlattenSimpleInterpolation | undefined =>
+const setHeightForAllScreen = ({ isOnAllScreen }: IStyles): FlattenSimpleInterpolation | undefined =>
   isOnAllScreen
     ? css`
         height: 100%;

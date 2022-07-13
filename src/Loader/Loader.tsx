@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import { IProps } from './interfaces';
-import { LoaderStyle } from './style';
+import { IProps } from "./interfaces";
+import { LoaderStyle } from "./style";
 
 const Loader = ({ dimension, color, background, center }: IProps) => (
   <LoaderStyle dimension={dimension} color={color} background={background} center={center}>
@@ -12,7 +12,7 @@ const Loader = ({ dimension, color, background, center }: IProps) => (
 );
 
 Loader.defaultProps = {
-  dimension: 'medium',
+  dimension: "medium",
 };
 
 export default Loader;

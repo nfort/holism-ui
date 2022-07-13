@@ -1,4 +1,4 @@
-import { useState, RefObject, useEffect } from 'react';
+import { useState, RefObject, useEffect } from "react";
 
 const useIntersection = (isSticky: boolean, ref: RefObject<HTMLDivElement>): boolean => {
   const [isStickyNow, setStickyNow] = useState<boolean>(false);

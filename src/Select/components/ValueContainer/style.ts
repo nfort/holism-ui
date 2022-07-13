@@ -1,18 +1,18 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import { ISelectStyle, IDimension } from '../../interfaces';
+import { ISelectStyle, IDimension } from "../../interfaces";
 
 const inputDimension = (dimension: IDimension | undefined) => {
   switch (dimension) {
-    case 'small': {
-      return 'padding: 14px 0;';
+    case "small": {
+      return "padding: 14px 0;";
     }
-    case 'large': {
-      return 'padding: 32px 0 12px;';
+    case "large": {
+      return "padding: 32px 0 12px;";
     }
-    case 'medium':
+    case "medium":
     default: {
-      return 'padding: 28px 0 8px;';
+      return "padding: 28px 0 8px;";
     }
   }
 };

@@ -1,8 +1,8 @@
-import { ArrowDownIcon, CloseIcon, LockIcon } from '@holism/icons';
-import styled, { css } from 'styled-components';
+import { ArrowDownIcon, CloseIcon, LockIcon } from "@holism/icons";
+import styled, { css } from "styled-components";
 
-import { DefaultTheme, ITheme } from '../../../Palette/variables';
-import { ISelectStyle } from '../../interfaces';
+import { DefaultTheme, ITheme } from "../../../Palette/variables";
+import { ISelectStyle } from "../../interfaces";
 
 const svgRepeatedStyles = (theme: ITheme) => css`
   svg {

@@ -1,16 +1,16 @@
-import { ReactNode, MouseEvent } from 'react';
+import { ReactNode, MouseEvent } from "react";
 
-export type TButtonDimensions = 'xsmall' | 'small' | 'medium' | 'large';
+export type TButtonDimensions = "xsmall" | "small" | "medium" | "large";
 export type TButtonColors =
-  | 'primary'
-  | 'secondary'
-  | 'tertiary'
-  | 'danger'
-  | 'danger-secondary'
-  | 'success'
-  | 'success-secondary'
-  | 'white';
-export type TButtonTypes = 'button' | 'reset' | 'submit';
+  | "primary"
+  | "secondary"
+  | "tertiary"
+  | "danger"
+  | "danger-secondary"
+  | "success"
+  | "success-secondary"
+  | "white";
+export type TButtonTypes = "button" | "reset" | "submit";
 
 export interface IProps {
   id?: string;

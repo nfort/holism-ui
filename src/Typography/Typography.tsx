@@ -1,5 +1,5 @@
-import React, { forwardRef, Ref } from 'react';
-import { TypographyColors } from '../Palette/export';
+import React, { forwardRef, Ref } from "react";
+import { TypographyColors } from "../Palette/export";
 
 import {
   HL1Style,
@@ -14,32 +14,28 @@ import {
   HS3Style,
   HS4Style,
   P,
-} from './style';
+} from "./style";
 
 export interface IProps {
   children: any;
   size?: number;
   lineHeight?: number;
   font?:
-    | '48/52/bold'
-    | '28/32/bold'
-    | '24/28/bold'
-    | '20/24/bold'
-    | '16/20/bold'
-    | '16/20'
-    | '14/20'
-    | '14/20/bold'
-    | '12/16/bold';
-  fontWeight?: 'bold';
+    | "48/52/bold"
+    | "28/32/bold"
+    | "24/28/bold"
+    | "20/24/bold"
+    | "16/20/bold"
+    | "16/20"
+    | "14/20"
+    | "14/20/bold"
+    | "12/16/bold";
+  fontWeight?: "bold";
   [propName: string]: any;
 }
 
 export interface IHL extends IProps {
-  color?:
-    | TypographyColors.azure
-    | TypographyColors.greyDay
-    | TypographyColors.plumbum
-    | TypographyColors.white;
+  color?: TypographyColors.azure | TypographyColors.greyDay | TypographyColors.plumbum | TypographyColors.white;
 }
 
 export interface IParagraph extends IProps {

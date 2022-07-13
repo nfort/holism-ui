@@ -1,14 +1,14 @@
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
+import styled, { css, FlattenSimpleInterpolation } from "styled-components";
 
-import { IStyles, TSlideShift } from './interfaces';
+import { IStyles, TSlideShift } from "./interfaces";
 
 const setSlideShift = (slideShift: number | undefined, type: TSlideShift) => {
   switch (type) {
-    case 'positive':
+    case "positive":
       return css`
         right: ${`${slideShift}px`};
       `;
-    case 'negative':
+    case "negative":
       return css`
         margin-left: ${`-${slideShift}px`};
       `;
@@ -42,7 +42,7 @@ export const SliderContent = styled.div<IStyles>`
   display: flex;
   transition: margin-left 1.5s;
 
-  ${({ slideShift }: IStyles) => setSlideShift(slideShift, 'negative')};
+  ${({ slideShift }: IStyles) => setSlideShift(slideShift, "negative")};
 `;
 
 export const ImageWrapper = styled.div<IStyles>`
@@ -59,7 +59,7 @@ export const ImageContainer = styled.picture<IStyles>`
   position: relative;
   transition: right 1.5s;
 
-  ${({ slideShift }: IStyles) => setSlideShift(slideShift, 'positive')};
+  ${({ slideShift }: IStyles) => setSlideShift(slideShift, "positive")};
 `;
 
 export const Image = styled.img`

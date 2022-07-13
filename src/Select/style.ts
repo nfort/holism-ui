@@ -1,16 +1,16 @@
-import { IDimension, ISelectStyle } from './interfaces';
+import { IDimension, ISelectStyle } from "./interfaces";
 
 const OptionMessageStyle = (dimension: IDimension | undefined): string => {
   switch (dimension) {
-    case 'small': {
-      return '12px 20px';
+    case "small": {
+      return "12px 20px";
     }
-    case 'large': {
-      return '19px 20px';
+    case "large": {
+      return "19px 20px";
     }
-    case 'medium':
+    case "medium":
     default: {
-      return '17px 20px';
+      return "17px 20px";
     }
   }
 };
@@ -21,14 +21,14 @@ export const colorStyles = (props: Partial<ISelectStyle>): object => {
     dropdownIndicator: (styles: any) => {
       return {
         ...styles,
-        display: 'flex',
-        paddingTop: '8px',
+        display: "flex",
+        paddingTop: "8px",
       };
     },
     indicatorSeparator: () => ({}),
     noOptionsMessage: (base: any) => ({
       ...base,
-      textAlign: 'left',
+      textAlign: "left",
       padding: OptionMessageStyle(props.dimension),
     }),
   };
