@@ -8,8 +8,6 @@ import { MenuListStyle } from "./style";
 
 // TODO: Add type
 const MenuList = ({ inputRef, children, selectProps: { dimension, optimizeLimit }, ...props }: any) => {
-  console.log(props);
-
   /* @ts-ignore */
   const theme: ITheme = useContext(ThemeContext) || DefaultTheme;
 
