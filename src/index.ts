@@ -8,5 +8,6 @@ export { default as ModalFooter } from "./ModalWindow/Footer";
 export { default as ModalContent } from "./ModalWindow/Content";
 export { default as useModal } from "./ModalWindow/utils/useModal";
 export { default as Input } from "./Input";
+export { default as Select } from "./Select/Select";
 export { default as TextArea } from "./TextArea";
 export { default as Tooltip } from "./Tooltip/Tooltip";
