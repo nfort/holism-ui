@@ -30,6 +30,7 @@ const Tooltip = (props: IProps) => {
       appendTo={appendTo}
       maxWidth={300}
       trigger={trigger}
+      hideOnClick={false}
       interactive={interactive}
       $isTextArea={isTextArea}
     >
