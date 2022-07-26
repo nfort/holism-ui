@@ -43,26 +43,9 @@ const DropMenu = (props: IProps) => {
     instance.current?.hide();
   };
 
-  const handleDocumentClick = (): void => {
-    if (!isOpen) {
-      return;
-    }
-
-    setIsOpen(false);
-
-    instance.current?.disable();
-    instance.current?.hide();
-  };
-
-  const listenOutsideClicks = (): (() => void) => {
-    document.addEventListener("click", handleDocumentClick);
-
-    return () => document.removeEventListener("click", handleDocumentClick);
-  };
-
-  const toggleShownState = (): void => {
+  useEffect(() => {
     instance.current && isOpen ? instance.current?.show() : instance.current?.hide();
-  };
+  }, [isOpen]);
 
   const menuProps: IMenuProps = {
     options,
@@ -70,9 +53,6 @@ const DropMenu = (props: IProps) => {
     onClick: handleOnClick,
     onMouseUp: handleOnMouseUp,
   };
-
-  useEffect(listenOutsideClicks, [isOpen]);
-  useEffect(toggleShownState, [isOpen]);
 
   return (
     <TippyContainer>
@@ -86,6 +66,7 @@ const DropMenu = (props: IProps) => {
         trigger={trigger}
         appendTo={appendTo}
         hideOnClick={false}
+        onClickOutside={() => setIsOpen(false)}
         onCreate={(i) => (instance.current = i)}
         onShown={onShown}
         onShow={handleOnShow}
