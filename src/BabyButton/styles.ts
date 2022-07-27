@@ -1,10 +1,10 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
-import Button from '../Button/Button';
-import { LoaderStyle } from '../Loader/style';
-import { DefaultTheme, MEDIA } from '../Palette/variables';
+import Button from "../Button/Button";
+import { LoaderStyle } from "../Loader/style";
+import { DefaultTheme, MEDIA } from "../Palette/variables";
 
-import { IBabyButtonStyle } from './interfaces';
+import { IBabyButtonStyle } from "./interfaces";
 
 export const ButtonBabyStyle = styled(Button)<IBabyButtonStyle>`
   height: 48px;
@@ -18,8 +18,7 @@ export const ButtonBabyStyle = styled(Button)<IBabyButtonStyle>`
       border-color: ${theme.colors.blueLake};
 
       & ${LoaderStyle} > div {
-        border-color: ${({ theme }: IBabyButtonStyle) => theme.colors.white} transparent transparent
-          transparent;
+        border-color: ${({ theme }: IBabyButtonStyle) => theme.colors.white} transparent transparent transparent;
       }
     `}
 
@@ -28,8 +27,7 @@ export const ButtonBabyStyle = styled(Button)<IBabyButtonStyle>`
     border-color: ${({ theme }: IBabyButtonStyle) => theme.colors.blueLake};
 
     & ${LoaderStyle} > div {
-      border-color: ${({ theme }: IBabyButtonStyle) => theme.colors.white} transparent transparent
-        transparent;
+      border-color: ${({ theme }: IBabyButtonStyle) => theme.colors.white} transparent transparent transparent;
     }
   }
 
@@ -55,18 +53,18 @@ export const ButtonBabyWrapperStyle = styled.div<IBabyButtonStyle>`
   padding: 0 1px;
 
   ${({ theme, isDisabled, isLoading }: IBabyButtonStyle) => css`
-    cursor: ${isDisabled || isLoading ? 'default' : 'pointer'};
+    cursor: ${isDisabled || isLoading ? "default" : "pointer"};
 
     ${!isDisabled &&
-      !isLoading &&
-      css`
-        &:hover {
-          ${ButtonBabyStyle} {
-            background-color: ${theme.colors.blueberry};
-            border-color: ${theme.colors.blueberry};
-          }
+    !isLoading &&
+    css`
+      &:hover {
+        ${ButtonBabyStyle} {
+          background-color: ${theme.colors.blueberry};
+          border-color: ${theme.colors.blueberry};
         }
-      `}
+      }
+    `}
   `};
 `;
 

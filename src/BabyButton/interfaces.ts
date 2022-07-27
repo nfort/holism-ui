@@ -1,7 +1,7 @@
-import { ReactNode, MouseEvent } from 'react';
+import { ReactNode, MouseEvent } from "react";
 
-import { ITheme } from '../Palette/variables';
-import { TButtonColors, TButtonDimensions, TButtonTypes } from '../Button/interfaces';
+import { ITheme } from "../Palette/variables";
+import { TButtonColors, TButtonDimensions, TButtonTypes } from "../Button/interfaces";
 
 export interface IProps {
   id?: string;
