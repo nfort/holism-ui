@@ -12,3 +12,4 @@ export { default as Input } from "./Input";
 export { default as Select } from "./Select/Select";
 export { default as TextArea } from "./TextArea";
 export { default as Tooltip } from "./Tooltip/Tooltip";
+export { H0, H1, H2, H3, H4, Paragraph, TypographyLarge } from "./Typography/Typography";
