@@ -33,3 +33,6 @@ export {
 } from "./Palette/export";
 export { default as ThemeProvider } from "./ThemeProvider/ThemeProvider";
 export { default as createTheme } from "./ThemeProvider/СreateTheme";
+export { default as Notification } from "./Notification/Notification";
+export { default as NotificationsWrapper } from "./Notification/NotificationsWrapper";
+export { default as NotificationsManager } from "./Notification/NotificationsManager";
