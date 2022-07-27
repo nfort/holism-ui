@@ -19,3 +19,14 @@ export { default as ReadOnlyValue } from "./ReadOnly/ReadOnlyComponents/Value";
 export { default as ReadOnlyPlaceholder } from "./ReadOnly/ReadOnlyComponents/Placeholder";
 export { default as ReadOnlyDescription } from "./ReadOnly/ReadOnlyComponents/Description";
 export { H0, H1, H2, H3, H4, Paragraph, TypographyLarge } from "./Typography/Typography";
+export {
+  COLORS,
+  TypographyColors,
+  GRADIENTS,
+  SHADOWS,
+  DIMENSIONS,
+  BorderRadius,
+  MEDIA,
+  MediaQuery,
+  DefaultTheme,
+} from "./Palette/export";
