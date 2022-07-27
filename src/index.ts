@@ -31,3 +31,5 @@ export {
   MediaQuery,
   DefaultTheme,
 } from "./Palette/export";
+export { default as ThemeProvider } from "./ThemeProvider/ThemeProvider";
+export { default as createTheme } from "./ThemeProvider/СreateTheme";
