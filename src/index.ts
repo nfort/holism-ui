@@ -2,6 +2,7 @@ export { default as Slider } from "./Slider";
 export { FieldLoading } from "./FieldLoading/FieldLoading";
 export { default as Button } from "./Button/Button";
 export { default as BabyButton } from "./BabyButton";
+export { default as Loader } from "./Loader/Loader";
 export { default as DropMenu } from "./DropMenu/DropMenu";
 export { default as ModalWindow } from "./ModalWindow/ModalWindow";
 export { default as OffCanvasWindow } from "./ModalWindow/OffCanvasWindow";
