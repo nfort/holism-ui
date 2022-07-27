@@ -239,4 +239,12 @@ const InputSuggest = (props: IProps) => {
   );
 };
 
+InputSuggest.LoadingIndicator = LoadingIndicator;
+InputSuggest.SuggestInputField = SuggestInputField;
+InputSuggest.SuggestContainer = SuggestContainer;
+InputSuggest.InputContainer = InputContainer;
+InputSuggest.LabelStyle = LabelStyle;
+InputSuggest.ErrorMessageStyle = ErrorMessageStyle;
+InputSuggest.NoOptionStyle = NoOptionStyle;
+
 export default InputSuggest;
