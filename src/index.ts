@@ -39,3 +39,4 @@ export { default as NotificationsManager } from "./Notification/NotificationsMan
 export { default as CheckBox } from "./CheckBox/CheckBox";
 export { default as CheckBoxGroup } from "./CheckBox/CheckBoxGroup";
 export { default as CheckBoxCompGroup } from "./CheckBox/CheckBoxCompGroup";
+export { default as InputSuggest } from "./InputSuggest/InputSuggest";
