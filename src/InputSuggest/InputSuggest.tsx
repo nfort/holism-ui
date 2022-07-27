@@ -10,6 +10,7 @@ import WithoutMessage from "../WithoutMessage/WithoutMessage";
 
 import LoadingIndicator from "./components/LoadingIndicator";
 import SuggestInputField from "./components/Input";
+import InputSuggestOption from "./components/Option";
 import { IProps, IPropsItem } from "./interfaces";
 import { InputContainer, SuggestContainer, LabelStyle, ErrorMessageStyle, NoOptionStyle } from "./styles";
 
@@ -240,6 +241,7 @@ const InputSuggest = (props: IProps) => {
 };
 
 InputSuggest.LoadingIndicator = LoadingIndicator;
+InputSuggest.InputSuggestOption = InputSuggestOption;
 InputSuggest.SuggestInputField = SuggestInputField;
 InputSuggest.SuggestContainer = SuggestContainer;
 InputSuggest.InputContainer = InputContainer;
