@@ -13,12 +13,6 @@ export const GlobalStyle = createGlobalStyle`
       font-family: 'Proxima Nova', sans-serif !important;           
     }
   
-    #root {
-      min-height: 100%;
-      height: 100%;
-      overflow-x: hidden;         
-    }     
-    
     #ModalContainer {
       position: absolute;
       z-index: 100;
