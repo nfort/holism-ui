@@ -36,6 +36,18 @@ export const GlobalBodyOverflowHiddenStyle = createGlobalStyle`
   }
 `;
 
+export const ModalWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1055;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+`;
+
 export const ModalOverlay = styled.div<IAnimationBlockProps>`
   position: fixed;
   top: 0;
@@ -185,7 +197,7 @@ export const OffCanvasDialog = styled.div<IAnimationBlockProps>`
   right: 0;
   bottom: 0;
   position: fixed;
-  z-index: 1045;
+  z-index: 1040;
   animation-duration: 0.3s;
   animation-name: slidein;
   animation-fill-mode: ease-in-out;
@@ -223,11 +235,8 @@ OffCanvasDialog.defaultProps = {
 export const ModalDialog = styled.div<IAnimationBlockProps>`
   height: ${() => "max-content"};
   outline: none;
-  /* transform: translate(0, 0); */
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 1045;
+  transform: translate(0, 0);
+  z-index: 1040;
 
   padding-top: 4px;
   ${MediaQuery("tablet")`

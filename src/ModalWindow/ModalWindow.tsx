@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 
 import useModal from "./utils/useModal";
 import { IModalWindowProps, IModalContext } from "./utils/interfaces";
-import { GlobalBodyOverflowHiddenStyle, ModalOverlay, ModalDialog } from "./style";
+import { GlobalBodyOverflowHiddenStyle, ModalOverlay, ModalDialog, ModalWrapper } from "./style";
 
 export const ModalContext = createContext<IModalContext>({
   isMobile: false,
@@ -27,32 +27,30 @@ const ModalWindow = ({
 
   return createPortal(
     <>
-      <ModalOverlay
-        animationDuration={animationDuration}
-        onClick={onClickOutside}
-        isMobile={isMobile}
-        className={className}
-      />
-      <ModalDialog
-        animationDuration={animationDuration}
-        ref={modalContentRef}
-        isMobile={isMobile}
-        aria-modal={true}
-        aria-hidden={true}
-        tabIndex={-1}
-        width={width}
-        role="dialog"
-      >
-        <ModalContext.Provider
-          value={{
-            isMobile,
-            isOpen,
-            modalOverlayRef,
-          }}
+      <ModalOverlay animationDuration={animationDuration} isMobile={isMobile} className={className} />
+      <ModalWrapper onClick={onClickOutside}>
+        <ModalDialog
+          onClick={(e) => e.stopPropagation()}
+          animationDuration={animationDuration}
+          ref={modalContentRef}
+          isMobile={isMobile}
+          aria-modal={true}
+          aria-hidden={true}
+          tabIndex={-1}
+          width={width}
+          role="dialog"
         >
-          {children}
-        </ModalContext.Provider>
-      </ModalDialog>
+          <ModalContext.Provider
+            value={{
+              isMobile,
+              isOpen,
+              modalOverlayRef,
+            }}
+          >
+            {children}
+          </ModalContext.Provider>
+        </ModalDialog>
+      </ModalWrapper>
       <GlobalBodyOverflowHiddenStyle />
     </>,
     document.body
