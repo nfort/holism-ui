@@ -55,18 +55,6 @@ ModalOverlay.defaultProps = {
   theme: DefaultTheme,
 };
 
-export const ModalWrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1055;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  outline: 0;
-`;
-
 export const HeaderStyle = styled(H1)<IHeaderStyle>`
   display: flex;
   align-items: center;
@@ -235,7 +223,11 @@ OffCanvasDialog.defaultProps = {
 export const ModalDialog = styled.div<IAnimationBlockProps>`
   height: ${() => "max-content"};
   outline: none;
-  transform: translate(0, 0);
+  /* transform: translate(0, 0); */
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1045;
 
   padding-top: 4px;
   ${MediaQuery("tablet")`

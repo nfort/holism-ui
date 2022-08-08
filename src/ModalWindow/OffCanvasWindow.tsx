@@ -2,7 +2,6 @@ import React, { useRef, createContext } from "react";
 import { createPortal } from "react-dom";
 
 import useModal from "./utils/useModal";
-import { useOnClickOutside } from "./utils/useOnClickOutside";
 import { IModalWindowProps, IModalContext } from "./utils/interfaces";
 import { GlobalBodyOverflowHiddenStyle, ModalOverlay, OffCanvasDialog } from "./style";
 
@@ -14,7 +13,7 @@ export const ModalContext = createContext<IModalContext>({
 
 const OffCanvasWindow = ({
   isOpen,
-  onClickOutside,
+  onClickOutside = () => {},
   isMobile,
   animationDuration = 300,
   width = "450px",
@@ -24,14 +23,12 @@ const OffCanvasWindow = ({
   const modalOverlayRef = useRef<HTMLDivElement>(null);
   const modalContentRef = useRef<HTMLDivElement>(null);
 
-  useOnClickOutside(modalContentRef, onClickOutside, isOpen);
-
   if (!isOpen) return null;
 
   return createPortal(
     <>
       <ModalOverlay
-        ref={modalOverlayRef}
+        onClick={onClickOutside}
         animationDuration={animationDuration}
         isMobile={isMobile}
         className={className}

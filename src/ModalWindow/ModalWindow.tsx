@@ -2,9 +2,8 @@ import React, { useRef, createContext } from "react";
 import { createPortal } from "react-dom";
 
 import useModal from "./utils/useModal";
-import { useOnClickOutside } from "./utils/useOnClickOutside";
 import { IModalWindowProps, IModalContext } from "./utils/interfaces";
-import { GlobalBodyOverflowHiddenStyle, ModalOverlay, ModalDialog, ModalWrapper } from "./style";
+import { GlobalBodyOverflowHiddenStyle, ModalOverlay, ModalDialog } from "./style";
 
 export const ModalContext = createContext<IModalContext>({
   isMobile: false,
@@ -14,7 +13,7 @@ export const ModalContext = createContext<IModalContext>({
 
 const ModalWindow = ({
   isOpen,
-  onClickOutside,
+  onClickOutside = () => {},
   isMobile,
   animationDuration = 300,
   width = "650px",
@@ -24,40 +23,36 @@ const ModalWindow = ({
   const modalOverlayRef = useRef<HTMLDivElement>(null);
   const modalContentRef = useRef<HTMLDivElement>(null);
 
-  useOnClickOutside(modalContentRef, onClickOutside, isOpen);
-
   if (!isOpen) return null;
 
   return createPortal(
     <>
       <ModalOverlay
-        ref={modalOverlayRef}
         animationDuration={animationDuration}
+        onClick={onClickOutside}
         isMobile={isMobile}
         className={className}
       />
-      <ModalWrapper>
-        <ModalDialog
-          animationDuration={animationDuration}
-          ref={modalContentRef}
-          isMobile={isMobile}
-          aria-modal={true}
-          aria-hidden={true}
-          tabIndex={-1}
-          width={width}
-          role="dialog"
+      <ModalDialog
+        animationDuration={animationDuration}
+        ref={modalContentRef}
+        isMobile={isMobile}
+        aria-modal={true}
+        aria-hidden={true}
+        tabIndex={-1}
+        width={width}
+        role="dialog"
+      >
+        <ModalContext.Provider
+          value={{
+            isMobile,
+            isOpen,
+            modalOverlayRef,
+          }}
         >
-          <ModalContext.Provider
-            value={{
-              isMobile,
-              isOpen,
-              modalOverlayRef,
-            }}
-          >
-            {children}
-          </ModalContext.Provider>
-        </ModalDialog>
-      </ModalWrapper>
+          {children}
+        </ModalContext.Provider>
+      </ModalDialog>
       <GlobalBodyOverflowHiddenStyle />
     </>,
     document.body
