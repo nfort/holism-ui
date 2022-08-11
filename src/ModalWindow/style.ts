@@ -105,8 +105,6 @@ export const ContentStyle = styled.div<IModalContentStyle>`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  height: calc(100vh - 175px);
-  overflow: auto;
   background-color: ${({ theme }: IBaseProps) => theme.colors.white};
 
   ${({ justifyContent }: IModalContentStyle) =>
@@ -209,6 +207,8 @@ export const OffCanvasDialog = styled.div<IAnimationBlockProps>`
 
   > ${ContentStyle} {
     margin: 0 2rem;
+    height: calc(100vh - 175px);
+    overflow: auto;
   }
 
   > ${FooterStyle} {
