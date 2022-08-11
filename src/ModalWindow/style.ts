@@ -258,7 +258,7 @@ export const ModalDialog = styled.div<IAnimationBlockProps>`
           width: 87%;
           border-radius: 16px;
           max-width: ${width ? width : "652px"};
-          min-height: 536px;
+          min-height: 236px;
           margin: 48px auto;
           @media (min-height: 720px) {
             margin: 80px auto;
