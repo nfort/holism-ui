@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  EyeOpenedIcon,
-  EyeClosedIcon,
-} from "@nfort/logistics-icons";
+import { EyeOpenedIcon, EyeClosedIcon } from "@nfort/logistics-icons";
 
 import Tooltip from "../../Tooltip/Tooltip";
 import { IIconsBox } from "../interfaces";
