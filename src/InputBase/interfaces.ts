@@ -45,7 +45,6 @@ export interface ISharedInputBase extends IInputBase {
 export interface IIconsBox {
   isHasValue: boolean;
   isDisabled?: boolean;
-  cardType?: TCardTypes;
   isSuccess?: boolean;
   type: TType;
   isPasswordVisible: boolean;
