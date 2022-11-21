@@ -5,7 +5,7 @@ import ReadOnlyPlaceholder from "../src/ReadOnly/ReadOnlyComponents/Placeholder"
 import ReadOnlyValue from "../src/ReadOnly/ReadOnlyComponents/Value";
 import ReadOnlyDescription from "../src/ReadOnly/ReadOnlyComponents/Description";
 import ReadOnlyContentTitle from "../src/ReadOnly/ReadOnlyComponents/ContentTitle";
-import { InfoIcon } from "@holism/icons";
+import { InfoIcon } from "@nfort/logistics-icons";
 
 const meta = {
   title: "ReadOnly",

@@ -1,14 +1,8 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import {
   EyeOpenedIcon,
   EyeClosedIcon,
-  LogoMastercardIcon,
-  LogoVisaIcon,
-  LogoMirIcon,
-  LogoJcbIcon,
-  LogoUnionpayIcon,
-  LogoMaestroIcon,
-} from "@holism/icons";
+} from "@nfort/logistics-icons";
 
 import Tooltip from "../../Tooltip/Tooltip";
 import { IIconsBox } from "../interfaces";
@@ -27,29 +21,9 @@ const IconsBox = ({
   testID,
   isSuccess,
   error,
-  cardType,
   isTextArea,
   dimension,
 }: IIconsBox) => {
-  const getBankIconType = (): ReactElement | null => {
-    switch (cardType) {
-      case "masterCard":
-        return <LogoMastercardIcon />;
-      case "visa":
-        return <LogoVisaIcon />;
-      case "mir":
-        return <LogoMirIcon />;
-      case "jcb":
-        return <LogoJcbIcon />;
-      case "unionPay":
-        return <LogoUnionpayIcon />;
-      case "maestro":
-        return <LogoMaestroIcon />;
-      default:
-        return null;
-    }
-  };
-
   return (
     <IconsBoxStyled isTextArea={isTextArea} dimension={dimension}>
       {isSuccess && !isDisabled && (
@@ -57,8 +31,7 @@ const IconsBox = ({
           <InformerOkIconStyled size={24} />
         </IconWrapper>
       )}
-      {!!cardType && <IconWrapper>{getBankIconType()}</IconWrapper>}
-      {!cardType && isShowClearIcon && isHasValue && !isDisabled && (
+      {isShowClearIcon && isHasValue && !isDisabled && (
         <IconWrapper>
           <ClearIconStyled data-element="input-clearIcon" size={24} onClick={onClear} />
         </IconWrapper>

@@ -33,7 +33,6 @@ const InputBase = (props: ISharedInputBase) => {
     testID,
     isReadOnly,
     isSuccess,
-    cardType,
     isTextArea,
   } = props;
 
@@ -44,7 +43,6 @@ const InputBase = (props: ISharedInputBase) => {
     isSuccess,
     type,
     isPasswordVisible,
-    cardType,
     tooltipContent,
     tooltipPosition,
     onClear,

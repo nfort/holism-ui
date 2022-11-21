@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
-import { ArrowDownIcon, ArrowUpIcon } from "@holism/icons";
+import { ArrowDownIcon, ArrowUpIcon } from "@nfort/logistics-icons";
 import { DefaultTheme } from "../Palette/export";
 import CheckBox from "./CheckBox";
 

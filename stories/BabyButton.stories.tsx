@@ -1,4 +1,4 @@
-import { RefreshIcon } from "@holism/icons";
+import { RefreshIcon } from "@nfort/logistics-icons";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import BabyButton from "../src/BabyButton";
 

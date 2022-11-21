@@ -1,4 +1,4 @@
-import { ArrowDownIcon, CloseIcon, LockIcon } from "@holism/icons";
+import { ArrowDownIcon, CloseIcon, LockIcon } from "@nfort/logistics-icons";
 import styled, { css } from "styled-components";
 
 import { DefaultTheme, ITheme } from "../../../Palette/variables";

@@ -3,7 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 import useIntersection from "./utils/useIntersection";
 import { HeaderStyle, IconContainer, StickyCheckerStyle, TitleStyle } from "./style";
 import { IHeaderProps, EAnimationType } from "./utils/interfaces";
-import { CloseIcon } from "@holism/icons";
+import { CloseIcon } from "@nfort/logistics-icons";
 
 const Header = (props: IHeaderProps) => {
   const { isSticky = false, title, onClickIconInHeader, padding, className } = props;

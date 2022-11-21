@@ -38,12 +38,9 @@ export interface ISharedInputBase extends IInputBase {
   testID?: string;
   isReadOnly?: boolean;
   isSuccess?: boolean;
-  cardType?: TCardTypes;
   isTextArea?: boolean;
   onInputAreaClick?: () => void;
 }
-
-export type TCardTypes = "masterCard" | "visa" | "mir" | "jcb" | "unionPay" | "maestro";
 
 export interface IIconsBox {
   isHasValue: boolean;

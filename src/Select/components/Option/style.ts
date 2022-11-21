@@ -1,4 +1,4 @@
-import { TickIcon } from "@holism/icons";
+import { TickIcon } from "@nfort/logistics-icons";
 import styled, { css } from "styled-components";
 import { DefaultTheme } from "../../../Palette/export";
 

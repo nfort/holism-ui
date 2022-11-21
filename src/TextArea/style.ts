@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import Textarea from "react-textarea-autosize";
-import { CloseIcon } from "@holism/icons";
+import { CloseIcon } from "@nfort/logistics-icons";
 
 import { BorderRadius, INNERSHADOWS } from "../Palette/export";
 import { DefaultTheme, ITheme } from "../Palette/variables";

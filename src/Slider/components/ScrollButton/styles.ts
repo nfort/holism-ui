@@ -1,5 +1,5 @@
 import styled, { css, FlattenSimpleInterpolation } from "styled-components";
-import { ArrowLeftIcon, ArrowRightIcon } from "@holism/icons";
+import { ArrowLeftIcon, ArrowRightIcon } from "@nfort/logistics-icons";
 
 import { EDirection, IStyles } from "./interfaces";
 import { DefaultTheme } from "../../../Palette/export";

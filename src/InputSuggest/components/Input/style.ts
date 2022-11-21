@@ -1,5 +1,5 @@
 import { BorderRadius, DefaultTheme } from "../../../Palette/export";
-import { CloseIcon, SearchIcon } from "@holism/icons";
+import { CloseIcon, SearchIcon } from "@nfort/logistics-icons";
 import styled, { css } from "styled-components";
 
 import { ITheme } from "../../../Palette/variables";

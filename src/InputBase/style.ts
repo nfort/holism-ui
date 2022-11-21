@@ -1,5 +1,5 @@
 import styled, { css, FlattenSimpleInterpolation } from "styled-components";
-import { CloseIcon, InfoDetailedIcon, InformerOkIcon } from "@holism/icons";
+import { CloseIcon, InfoDetailedIcon, InformerOkIcon } from "@nfort/logistics-icons";
 import { rgba } from "polished";
 
 import { BorderRadius } from "../Palette/export";

@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { QuestionIcon } from "@holism/icons";
+import { QuestionIcon } from "@nfort/logistics-icons";
 
 import { ITheme, DefaultTheme } from "../Palette/variables";
 

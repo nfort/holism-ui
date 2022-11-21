@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { KeyboardIcon } from "@holism/icons";
+import { KeyboardIcon } from "@nfort/logistics-icons";
 import Tooltip from "../src/Tooltip/Tooltip";
 
 const meta = {

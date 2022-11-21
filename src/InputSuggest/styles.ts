@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
-import { TickIcon } from "@holism/icons";
+import { TickIcon } from "@nfort/logistics-icons";
 import { rgba } from "polished";
 
 import { COLORS } from "../Palette/export";

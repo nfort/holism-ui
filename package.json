@@ -23,7 +23,7 @@
     "build-storybook": "build-storybook"
   },
   "peerDependencies": {
-    "@holism/icons": "6.x.x",
+    "@nfort/logistics-icons": ">=6",
     "react": ">=17"
   },
   "husky": {
@@ -49,6 +49,7 @@
   ],
   "devDependencies": {
     "@babel/core": "^7.17.4",
+    "@nfort/logistics-icons": "^6.11.8",
     "@size-limit/preset-small-lib": "^7.0.8",
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-info": "^5.3.21",
@@ -73,7 +74,6 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "@holism/icons": "^6.11.5",
     "@nfort/react-autosuggest": "^11.0.1",
     "@tippyjs/react": "^4.1.0",
     "polished": "^4.1.4",

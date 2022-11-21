@@ -1,5 +1,5 @@
 import React, { useEffect, useState, ChangeEvent, FocusEvent, KeyboardEvent, MouseEvent } from "react";
-import { InfoDetailedIcon } from "@holism/icons";
+import { InfoDetailedIcon } from "@nfort/logistics-icons";
 import { withTheme } from "styled-components";
 
 import { DefaultTheme } from "../Palette/variables";
